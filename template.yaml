@@ -1,0 +1,13 @@
+users:
+  - name: ADMIN_USERNAME
+    password: ADMIN_PASSWORD_ENCRYPTED
+dns:
+  bind_host: 0.0.0.0
+  blocking_mode: nxdomain
+  upstream_dns:
+    - "UPSTREAM_DNS"
+  bootstrap_dns: "UPSTREAM_DNS"  # this is the correct way to specify this despite the error `unmarshal !!str `8.8.8.8` into []string`
+filters:
+user_rules:
+  - FILTER_DENY
+  - FILTER_ALLOW
