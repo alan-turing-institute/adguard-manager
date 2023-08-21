@@ -2,12 +2,20 @@ users:
   - name: ADMIN_USERNAME
     password: ADMIN_PASSWORD_ENCRYPTED
 dns:
-  bind_host: 0.0.0.0
   blocking_mode: nxdomain
   upstream_dns:
     - "UPSTREAM_DNS"
-  bootstrap_dns: "UPSTREAM_DNS"  # this is the correct way to specify this despite the error `unmarshal !!str `8.8.8.8` into []string`
+  upstream_dns_file: ""
+  bootstrap_dns:
+    - "UPSTREAM_DNS"
+querylog:
+  enabled: true
 filters:
 user_rules:
   - FILTER_DENY
   - FILTER_ALLOW
+log:
+  verbose: true
+# Note that because we are only providing a partial config file we need the
+# `schema_version` key or the full set of YAML migrations will get run.
+schema_version: 24
