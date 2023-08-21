@@ -1,2 +1,2 @@
 # adguard-manager
-Docker-based manager for AdGuard home
+Docker-based manager for [AdGuardHome](https://github.com/AdguardTeam/AdGuardHome).
